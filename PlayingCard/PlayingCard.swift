@@ -34,6 +34,10 @@ struct PlayinCard: CustomStringConvertible {
     
     enum Rank: CustomStringConvertible {
         
+        case ace
+        case face(String)
+        case numeric(Int)
+        
         var description: String {
             switch self {
                 case .ace: return "A"
@@ -42,9 +46,16 @@ struct PlayinCard: CustomStringConvertible {
             }
         }
         
-        case ace
-        case face(String)
-        case numeric(Int)
+        var order:Int {
+            switch self {
+                case .ace: return 1
+                case .numeric(let pips): return pips
+                case .face(let kind) where kind == "J": return 11
+                case .face(let kind) where kind == "Q": return 12
+                case .face(let kind) where kind == "K": return 13
+                default: return 0
+            }
+        }
         
         static var all : [Rank] {
             var result = [Rank.ace]
