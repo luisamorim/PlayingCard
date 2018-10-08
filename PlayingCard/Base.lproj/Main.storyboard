@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,16 +20,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view opaque="NO" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="mA7-Oa-VXF" customClass="PlayingCardView" customModule="PlayingCard" customModuleProvider="target">
-                                <rect key="frame" x="16" y="36" width="343" height="615"/>
+                                <rect key="frame" x="16" y="69" width="343" height="549"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="750" constant="800" id="D1E-5L-jXg"/>
+                                    <constraint firstAttribute="width" secondItem="mA7-Oa-VXF" secondAttribute="height" multiplier="5:8" id="TKn-YZ-JRq"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rank">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isFaceUp" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="suit" value="♦️"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mA7-Oa-VXF" secondAttribute="trailing" constant="16" id="9qZ-QT-vV4"/>
-                            <constraint firstItem="mA7-Oa-VXF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="LEd-iB-0nD"/>
-                            <constraint firstItem="mA7-Oa-VXF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="pPW-iL-Nuo"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mA7-Oa-VXF" secondAttribute="bottom" constant="16" id="tlU-5Q-qVN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mA7-Oa-VXF" secondAttribute="trailing" constant="16" id="9qZ-QT-vV4"/>
+                            <constraint firstItem="mA7-Oa-VXF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="CjE-S9-ibH"/>
+                            <constraint firstItem="mA7-Oa-VXF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="LEd-iB-0nD"/>
+                            <constraint firstItem="mA7-Oa-VXF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="pPW-iL-Nuo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="mA7-Oa-VXF" secondAttribute="bottom" constant="16" id="tlU-5Q-qVN"/>
+                            <constraint firstItem="mA7-Oa-VXF" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="xVn-QB-y8D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
